@@ -1,15 +1,38 @@
+int monsterX;
+int monsterX2;
+int monsterAngle;
+
 void setup() {
   size(900, 900);
   strokeWeight(2);
+  monsterX2 = 700;
 }
 
 void draw() {
+  
   background(255);
-  monster(450, 200);
+  monster(monsterX, 400);
+  monster(monsterX2, 100);
+  
+  monsterX = monsterX + 10;
+  monsterX2 += 10;
+  //monsterAngle = monsterAngle + 5;
+  if(monsterX > 1150){
+    monsterX = -250;
+  }
+  
+  if(monsterX2 > 1150){
+    monsterX2 = -250;
+  }
+ 
 }
 
 void monster(int x, int y) {
+  pushMatrix();
   translate(x, y);
+  
+  //ROTATION
+ // rotate(radians(angle));
 
   // HORNS (draw first so they appear behind head)
   fill(#F5C842);
@@ -30,17 +53,6 @@ void monster(int x, int y) {
   ellipse(-195, 280, 100, 55);   // left arm
   ellipse(195, 280, 100, 55);    // right arm
 
-  // LEFT CLAWS
-  fill(#C8DCB8);
-  triangle(-230, 260, -260, 248, -245, 278);
-  triangle(-245, 270, -268, 265, -250, 292);
-  triangle(-255, 283, -275, 288, -254, 305);
-
-  // RIGHT CLAWS
-  triangle(230, 260, 260, 248, 245, 278);
-  triangle(245, 270, 268, 265, 250, 292);
-  triangle(255, 283, 275, 288, 254, 305);
-
   // LEFT FOOT
   fill(#A2E367);
   stroke(0);
@@ -49,16 +61,6 @@ void monster(int x, int y) {
   // RIGHT FOOT
   ellipse(70, 460, 120, 65);
 
-  // LEFT FOOT CLAWS
-  fill(#C8DCB8);
-  triangle(-105, 458, -118, 445, -105, 475);
-  triangle(-80, 465, -82, 450, -62, 465);
-  triangle(-55, 460, -50, 445, -35, 460);
-
-  // RIGHT FOOT CLAWS
-  triangle(105, 458, 118, 445, 105, 475);
-  triangle(80, 465, 82, 450, 62, 465);
-  triangle(55, 460, 50, 445, 35, 460);
 
   // CHEEKS
   noStroke();
@@ -77,13 +79,13 @@ void monster(int x, int y) {
 
   // TOP TEETH
   fill(255);
-  triangle(-40, 155, -20, 125, 0, 155);
-  triangle(0, 155, 20, 125, 40, 155);
+  triangle(-40, 135, -15, 160, 0, 130);
+  triangle(0, 130, 15, 160, 40, 135);
 
   // BOTTOM TEETH
   fill(255);
-  triangle(-30, 230, -15, 258, 5, 230);
-  triangle(10, 230, 25, 258, 40, 230);
+  triangle(-40, 245, -15, 220, 0, 250);
+  triangle(0, 250, 15, 220, 40, 245);
 
   // EYES
   fill(255);
@@ -95,4 +97,6 @@ void monster(int x, int y) {
   fill(0);
   ellipse(-65, 60, 22, 22);
   ellipse(65, 60, 22, 22);
+  
+  popMatrix();
 }
