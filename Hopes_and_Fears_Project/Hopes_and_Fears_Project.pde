@@ -1,4 +1,4 @@
-int x = 0;
+int y = 850;
 int s = 20;
 
 void setup() {
@@ -6,28 +6,42 @@ void setup() {
 }
 
 void draw() {
-  background(220);
+  // dark background
+  background(30, 30, 50);
   
-  // top audience area
-  fill(70, 70, 70);
-  rect(0, 0, 900, 300);
+  // left seating area
+  fill(50, 50, 80);
+  noStroke();
+  rect(0, 0, 300, 900);
   
-  // red aisle (middle)
+  // right seating area
+  fill(50, 50, 80);
+  noStroke();
+  rect(600, 0, 300, 900);
+  
+  // red aisle in center
   fill(180, 30, 30);
-  rect(0, 300, 900, 300);
+  noStroke();
+  rect(300, 0, 300, 900);
   
-  // bottom audience area
-  fill(70, 70, 70);
-  rect(0, 600, 900, 300);
+  // stage at the top
+  fill(80, 60, 40);
+  noStroke();
+  rect(150, 0, 600, 150);
   
-  // move figure forward
-  x = x + 1;
+  // move figure up, stop at stage
+  if (y > 165) {
+    y = y - 5;
+  }
   
-  drawFigure(x, 450, s);
+  stroke(0);
+  strokeWeight(2);
+  drawFigure(450, y, s);
 }
 
 void drawFigure(int x, int y, int s) {
   pushMatrix();
+  fill(255,204,153);
   translate(x, y);
   ellipse(0, 0, s, s);
   line(0, s/2, 0, s*2);
