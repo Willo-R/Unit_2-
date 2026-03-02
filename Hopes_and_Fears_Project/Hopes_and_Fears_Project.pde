@@ -3,19 +3,23 @@ int s = 20;
 
 void setup() {
   size(900, 900);
+  
 }
-
+  
 void draw() {
   // dark background
-  background(30, 30, 50);
+  background(30,30,50);
   
+ 
   // left seating area
-  fill(50, 50, 80);
+  fill(#868384);
   noStroke();
   rect(0, 0, 300, 900);
+  fill(0,0,255);
+  rect(
   
   // right seating area
-  fill(50, 50, 80);
+  fill(#868384);
   noStroke();
   rect(600, 0, 300, 900);
   
