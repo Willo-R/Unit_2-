@@ -7,21 +7,24 @@ void setup() {
 }
   
 void draw() {
-  // dark background
-  background(30,30,50);
   
- 
   // left seating area
-  fill(#868384);
+  fill(#3137C4);
   noStroke();
   rect(0, 0, 300, 900);
-  fill(0,0,255);
-  rect(
+  fill(0);
+  benchLeft(300);
+  benchLeft(500);
+  benchLeft(700);
   
   // right seating area
-  fill(#868384);
+  fill(#3137C4);
   noStroke();
   rect(600, 0, 300, 900);
+  fill(0);
+  benchRight(300);
+  benchRight(500);
+  benchRight(700);
   
   // red aisle in center
   fill(180, 30, 30);
@@ -34,13 +37,14 @@ void draw() {
   rect(150, 0, 600, 150);
   
   // move figure up, stop at stage
-  if (y > 165) {
+  if (y > 190) {
     y = y - 5;
   }
   
   stroke(0);
   strokeWeight(2);
   drawFigure(450, y, s);
+  hat();
 }
 
 void drawFigure(int x, int y, int s) {
@@ -54,3 +58,24 @@ void drawFigure(int x, int y, int s) {
   line(0, s*2, s, s*3);
   popMatrix();
 }
+
+void benchLeft(int y){
+  rect(50, y, 200, 15);
+}
+
+void benchRight(int z){
+  rect(650, z, 200, 15);
+}
+
+void hat(int x, int y){
+  pushMatrix();
+  translate(x,y);
+  fill(0);
+  //line(-5, 
+  line(445, 180, 446, 170);
+  line(454, 170, 455, 180);
+  rotate(PI/4);
+  rect(442, 155, 16, 16);
+  popMatrix();
+}
+ 
