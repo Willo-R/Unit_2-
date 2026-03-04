@@ -40,11 +40,17 @@ void draw() {
   if (y > 190) {
     y = y - 5;
   }
+  if(y == 190) {
+   fill(0);
+  line(445, 180, 446, 175);
+  line(454, 175, 455, 180);
+  ellipse(450, 170, 30, 10);
+  }
   
   stroke(0);
   strokeWeight(2);
   drawFigure(450, y, s);
-  hat();
+  
 }
 
 void drawFigure(int x, int y, int s) {
@@ -67,15 +73,13 @@ void benchRight(int z){
   rect(650, z, 200, 15);
 }
 
-void hat(int x, int y){
-  pushMatrix();
-  translate(x,y);
+void hat(){
+  
   fill(0);
-  //line(-5, 
-  line(445, 180, 446, 170);
-  line(454, 170, 455, 180);
-  rotate(PI/4);
-  rect(442, 155, 16, 16);
-  popMatrix();
+  line(445, 180, 446, 175);
+  line(454, 175, 455, 180);
+  ellipse(450, 170, 30, 10);
+ 
 }
  
+
