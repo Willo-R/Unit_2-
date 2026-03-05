@@ -1,5 +1,6 @@
 int y = 850;
 int s = 20;
+int count;
 
 void setup() {
   size(900, 900);
@@ -35,16 +36,19 @@ void draw() {
   fill(80, 60, 40);
   noStroke();
   rect(150, 0, 600, 150);
-  
+
   // move figure up, stop at stage
   if (y > 190) {
     y = y - 5;
   }
-  if(y == 190) {
-   fill(0);
-  line(445, 180, 446, 175);
-  line(454, 175, 455, 180);
-  ellipse(450, 170, 30, 10);
+  
+  else if(count < 60){
+    count = count + 1;
+  }
+  
+  //receives hat
+  if(count == 60){
+    hat();
   }
   
   stroke(0);
@@ -76,10 +80,11 @@ void benchRight(int z){
 void hat(){
   
   fill(0);
+  stroke(0);
+  quad(430, 170, 450, 160, 470, 170, 450, 180);
   line(445, 180, 446, 175);
   line(454, 175, 455, 180);
-  ellipse(450, 170, 30, 10);
- 
+  stroke(255, 215, 0);
+  
 }
  
-
