@@ -54,6 +54,7 @@ void draw() {
   stroke(0);
   strokeWeight(2);
   drawFigure(450, y, s);
+  //drawFigure(370, 190, s);
   
 }
 
@@ -77,14 +78,26 @@ void benchRight(int z){
   rect(650, z, 200, 15);
 }
 
-void hat(){
-  
+void hat(){ 
   fill(0);
   stroke(0);
-  quad(430, 170, 450, 160, 470, 170, 450, 180);
+  quad(433, 170, 450, 160, 467, 170, 450, 180);
   line(445, 180, 446, 175);
   line(454, 175, 455, 180);
   stroke(255, 215, 0);
+  line(453, 169, 465, 175);
+  line(465, 176, 465, 183);
+  line(465, 176, 462, 183);
+  line(465, 176, 468, 183);
+}
+
+void drawProfessor(int x, int y, int posX, int posY) {
+  pushMatrix();
+  fill(255,204,153);
+  translate(x, y);
+  ellipse(0, 0, 20, 20);
+ // ellipse(50, 
   
+  popMatrix();
 }
  
