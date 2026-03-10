@@ -4,9 +4,12 @@ float posY1 = 30;
 float posY2 = 40;
 int count;
 
+PFont font;
+
+
 void setup() {
   size(900, 900);
-  
+  font = createFont("KGPerfectPenmanship.ttf", 50);
 }
   
 void draw() {
@@ -35,13 +38,19 @@ void draw() {
   rect(300, 0, 300, 900);
   
   // stage at the top
-  fill(80, 60, 40);
-  noStroke();
+  fill(255);
+  stroke(0);
   rect(150, 0, 600, 150);
+  
+  //font
+  fill(0);
+  textFont(font);
+  textSize(45);
+  text("Congratulations, Dr. Willow!", 170, 90);
 
   // move figure up, stop at stage
   if (y > 190) {
-    y = y - 5;
+    y = y - 2;
   }
   
   else if(count < 80){
@@ -128,5 +137,9 @@ void drawProfessor(int x, int y, float posY1, float posY2) {
   line(6, 20, 25, posY1);
   line(10, 30, 27, posY2);
   popMatrix();
+}
+
+void audiencePerson(int x, int y){
+  
 }
  
