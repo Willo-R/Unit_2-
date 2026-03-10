@@ -50,14 +50,14 @@ void draw() {
 
   // move figure up, stop at stage
   if (y > 190) {
-    y = y - 2;
+    y = y - 5;
   }
   
   else if(count < 80){
     count = count + 1;
   }
   
-  if(count > 0 && count < 50){
+  if(count > 0 && count < 55){
     posY1 = posY1 - 0.5;
     posY2 = posY2 - 0.5;
   }
@@ -72,7 +72,9 @@ void draw() {
   drawFigure(450, y, s);
   drawProfessor(370, 190, posY1, posY2);
   hatProf(-80, 0);
-  
+  audiencePerson(67, 270);
+  audiencePerson(67, 470);
+  audiencePerson(67, 670);
 }
 
 void drawFigure(int x, int y, int s) {
@@ -140,6 +142,22 @@ void drawProfessor(int x, int y, float posY1, float posY2) {
 }
 
 void audiencePerson(int x, int y){
-  
+  pushMatrix();
+  translate(x, y);
+  for (int i = 0; i < 5; i++) {
+    pushMatrix();
+    translate(i * 40, 0);
+    // head
+    ellipse(0, 0, 15, 15);
+    // body
+    line(0, 7, 0, 30);
+    // arms
+    line(-15, 15, 15, 15);
+    // legs bent forward (sitting)
+    //line(-5, 30, -15, 30);
+    //line(5, 30, 15, 30);
+    popMatrix();
+  }
+  popMatrix();
 }
  
