@@ -10,6 +10,7 @@ PFont font;
 void setup() {
   size(900, 900);
   font = createFont("KGPerfectPenmanship.ttf", 50);
+  
 }
   
 void draw() {
@@ -50,10 +51,10 @@ void draw() {
 
   // move figure up, stop at stage
   if (y > 190) {
-    y = y - 5;
+    y = y - 2;
   }
   
-  else if(count < 80){
+  else if(count < 70){
     count = count + 1;
   }
   
@@ -63,7 +64,7 @@ void draw() {
   }
   
   //receives hat
-  if(count == 80){
+  if(count == 70){
     hat();
   }
   
