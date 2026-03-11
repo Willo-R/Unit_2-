@@ -15,7 +15,7 @@ void setup() {
 void draw() {
   
   // left seating area
-  fill(#BCA522);
+  fill(#fbe345);
   noStroke();
   rect(0, 0, 300, 900);
   fill(0);
@@ -24,7 +24,7 @@ void draw() {
   benchLeft(700);
   
   // right seating area
-  fill(#BCA522);
+  fill(#fbe345);     
   noStroke();
   rect(600, 0, 300, 900);
   fill(0);
@@ -72,9 +72,12 @@ void draw() {
   drawFigure(450, y, s);
   drawProfessor(370, 190, posY1, posY2);
   hatProf(-80, 0);
-  audiencePerson(67, 270);
-  audiencePerson(67, 470);
-  audiencePerson(67, 670);
+  audiencePerson(70, 270);
+  audiencePerson(70, 470);
+  audiencePerson(70, 670);
+  audiencePerson(670, 270);
+  audiencePerson(670, 470);
+  audiencePerson(670, 670);
 }
 
 void drawFigure(int x, int y, int s) {
