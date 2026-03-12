@@ -1,16 +1,28 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+
 int y = 850;
 int s = 20;
 float posY1 = 30;
 float posY2 = 40;
 int count;
-
 PFont font;
+Minim minimTools;
+AudioPlayer applause;
 
 
 void setup() {
   size(900, 900);
   font = createFont("KGPerfectPenmanship.ttf", 50);
   
+  minimTools = new Minim(this);
+  applause = minimTools.loadFile("applause.mp3");
+  applause.play();
 }
   
 void draw() {
@@ -54,7 +66,7 @@ void draw() {
     y = y - 2;
   }
   
-  else if(count < 70){
+  else if(count < 150){
     count = count + 1;
   }
   
@@ -64,8 +76,12 @@ void draw() {
   }
   
   //receives hat
-  if(count == 70){
+  if(count >= 70){
     hat();
+  }
+  
+  if(count == 150){
+    minimTools.stop();
   }
   
   stroke(0);
